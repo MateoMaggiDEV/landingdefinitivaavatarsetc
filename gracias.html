@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Gracias! — Agenda tu diagnóstico con Mateo Maggi</title>
+  <meta name="description" content="Confirmá tu diagnóstico de 15 minutos con Mateo Maggi y accedé al Sistema de Adquisición Automático." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="gracias">
+  <main class="thankyou">
+    <div class="thankyou-card">
+      <div class="badge">Lead Magnet enviado</div>
+      <h1>¡Gracias <span id="lead-name">por registrarte</span>!</h1>
+      <p>Revisá tu correo para descargar el Playbook. Aprovechá y asegurá tu espacio en la agenda:</p>
+      <a class="btn primary" href="https://calendly.com/mateomaggi14/30min" target="_blank" rel="noopener">Agendar Diagnóstico Gratuito</a>
+    </div>
+    <section class="section calendly" id="agenda">
+      <div class="calendly-wrapper">
+        <h2>Reserva ahora tu llamada de diagnóstico</h2>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/mateomaggi14/30min" style="min-width:320px;height:700px;"></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const nameEl = document.getElementById('lead-name');
+    if (name && nameEl) {
+      nameEl.textContent = `${name}!`;
+    }
+  </script>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
